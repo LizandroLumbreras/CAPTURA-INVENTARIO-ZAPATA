@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventario Zapata</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 10px;
+    }
+    h2 {
+      text-align: center;
+      color: #00416A;
+    }
+    .tabla-contenedor {
+      overflow-x: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+    th.fijo, td.fijo {
+      position: sticky;
+      left: 0;
+      background: #f4f4f4;
+      z-index: 1;
+    }
+    .btn-guardar {
+      margin-top: 20px;
+      background: #e60000;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 600px) {
+      table {
+        font-size: 14px;
+        min-width: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Inventario Zapata - Captura</h2>
+  <div class="tabla-contenedor">
+    <table>
+      <thead>
+        <tr>
+          <th class="fijo">Artículo</th>
+          <th>Recibido</th>
+          <th>Observaciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-productos">
+<tr><td class="fijo">CHAROLA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855RE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH066RE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH007</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH835</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH105</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH1014</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH9H</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH8S</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855MA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH066MA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CONTENEDOR</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN7X7D4P</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN7X7L4P</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN8X8D4P</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN8X8L4P</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN9X9D4P</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN9X9L4P</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CNH10P (HAM)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CNHD (HOT DOG)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CNHO (HOGIE)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PLATOS TERMICOS</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PH4</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PH6</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PH8</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PH10</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT006</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT9D</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT8D</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT8L</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT10D</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT10L</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">LAMINA CORTADA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">LAC3040</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CHAROLAS COLORES</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855AM</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855NE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855RS</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855AZUL</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855RJ</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH007AZUL</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH007AM</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH007NE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH007RS</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH007RJ</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH9HAM</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH9HNE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH9HRS</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH9HAZUL</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH9HRJ</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH066AM</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH8SNEGRA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CONTENEDORES NEGROS</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN7X7LNE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN7X7DNE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN8X8DNE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN8X8LNE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN9X9DNE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN9X9LNE</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CGHAMNEGRA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">DOMOS</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">R14</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VASOS PLASTICOS</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP4A</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP4CH</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VPS5A</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP51/2</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP6</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP7</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP8</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP10</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP12</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP14</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP16A</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP16L</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV1LT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV1/2LT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV1/4LT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TAPA REY (TR) VP</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TAP REY C/R (TRR)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VASOS TERMICOS</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT4A</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT4CH</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT6</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT8</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT8A</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT10</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT12</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT12A</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT14</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT16</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT1/2LT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VT1LT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TAPA P/ VASO PLASTICO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP1OZ</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP2OZ</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP51/24CH</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP4A8</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP10</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP1214</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP16</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TAPA P/ VASO TERMICO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TVT8</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TVT10</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TVT4A12</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TVT141620</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TVT4CH6</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TVT1LTR</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TVT1LT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TTVT1L (TERM)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">LINEA EU (VPP Y TP)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP10EU</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP12EU</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP14EU</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP16EU</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP32EU</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TPEUR (RANURA)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TPEU (LISA)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TPDEU (DOMO)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP32EUR (RANURA)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP32EU (LISA)</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TPD16 EU</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POPOTE BIO REYMA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ESTUCH 21 BIO 4/500</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ESTUCH 26 BIO 4/500</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">LINEA BIO REYMA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH066MABIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855MABIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN7X7L4PBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN7X7D4PBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN8X8D4PBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN8X8L4PBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN9X9D4PBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN9X9L4PBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CNH10PBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH835BIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH007BIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855REBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH9HBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT9DBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT8LBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT8DBIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">LINEA BIOPLAST</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN7X7L4PBIO  TINAJITA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN7X7D4PBIO  TINAJITA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN8X8D4PBIO  TINAJITA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN8X8L4PBIO  TINAJITA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN9X9D4PBIO  TINAJITA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CN9X9L4PBIO  TINAJITA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH066MABIO TINAJITA CREMA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855MABIO TINJITA CREMA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH066MABIO TINAJITA BLANCA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855MABIO TINAJITA BLANCA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">LINEA JAGUAR </td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT 9D</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT 8L</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH066</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT 6 PASTELERO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP10</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP 51/2</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP 8</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP 6</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT PH6</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT PH8</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT 8 DIV</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">JUGUERO MEDIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">JUGUERO 1L</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TAP P/ENV JUGUERO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PH 8</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP 12</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP 16B</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP 14</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">VP 16ALT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">PT10 1/4 DIV</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BIG COLA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BIG COLA 3.3</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BIG COLA 1.5 </td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BIG COLA 500 ML</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CIFRUT 3.3</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CIFRUT 625</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CIFRUT 300</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BIG COLA 300</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">SPORADE 625</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">STAR COLA 355</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">STAR LIMA 355</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">STAR NARANJA 355</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CHECHI FRESCO 140 ML</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">AGUA 500 ML</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">AGUA 1.5</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">AGUA 1 L</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">STAR SURTIDA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CONVERMEX </td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V104</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V106</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V108</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V110</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V112</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V114</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V116</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V132</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV704</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV706</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV708</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV712</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV716</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV732</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ENV760</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP404</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP406</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP408</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP410</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP412</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP414</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP416</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TP516</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">V120</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">HIELERA CH</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">HIELERA MED</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">HIELERA GRAD</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">HIELERA AUTOESTI C/5</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">TORTILLERO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH855</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CH066</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BOLSA NATURAL CORTADA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">6X12 NAT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">8X12 NAT</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">10X20</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">10X25</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">12X20</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">14X20</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">15X25</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">18X26</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">20X30</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">25X35</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">25X40</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">30X50</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">30X60 CAL 300</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">40X60</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">50X70</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">60X90</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">70X90</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">90X1.2</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BOLSA CAMISETA POLIPAPEL BIO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLIPAPEL BIO MINI</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLIPAPEL BIO CH</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLIPAPEL BIO MED</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLIPAPEL BIO GRAD</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLIPAPEL BIO JUMBO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BOLSA CAMISETA POLISEDA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLISEDA MINI</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLISEDA CH</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLISEDA MED</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">POLISEDA GRAD</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BOLSA CAMISETA BAJA NEGRA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CAMISETA BD NEGRA CH</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CAMISETA BD NEGRA MED</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">CAMISETA BD NEGRA GRAD</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ROLLO DE ALTA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">15X26</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">18X26</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">20X30</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">20X30 C120</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">25X35</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">25X40</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">30X40</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">30X50</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">40X60</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">50X70</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">ROLLO ALTA TIPO AMERICANO</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">20X30</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">25X40</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">BOLSA BASURA</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">50X70</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">70X90</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+<tr><td class="fijo">90X1.2</td><td><input type="number" /></td><td><input type="text" /></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="btn-guardar" onclick="guardarInventario()">Guardar Inventario</button>
+  <script>
+    function guardarInventario() {
+      const filas = document.querySelectorAll('#tabla-productos tr');
+      const inventario = [];
+      filas.forEach(fila => {
+        const datos = {
+          articulo: fila.children[0].textContent,
+          recibido: fila.children[1].querySelector('input').value,
+          observaciones: fila.children[2].querySelector('input').value
+        };
+        inventario.push(datos);
+      });
+      console.log("Inventario capturado:", inventario);
+      alert("Inventario listo para guardar en Firebase o base de datos.");
+    }
+  </script>
+</body>
+</html>
